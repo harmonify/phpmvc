@@ -24,6 +24,11 @@ class Student extends Controller {
   public function add()
   {
     if ($this->model('Student_model')->addNewStudent($_POST) > 0) {
+      Flasher::setFlash(true, 'added a new student', 'success');
+      header('Location: '.BASEURL.'/student');
+      exit;
+    } else {
+      Flasher::setFlash(false, 'add a new student', 'danger');
       header('Location: '.BASEURL.'/student');
       exit;
     }
