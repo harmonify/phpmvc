@@ -2,13 +2,16 @@
 class Flasher {
 /**
  *
- * @param mixed $condition adjective
+ * @param bool $success true|false
  * @param mixed $message action taken
  * @param mixed $type alert type
- * @return alert You have $condition $message
+ * @return alert You have $success $message
  */
-  public static function setFlash($condition, $message, $type)
+  public static function setFlash($success, $message, $type)
   {
+    if ($success === true) $condition = "successfully";
+    else $condition = "failed to";
+
     $_SESSION['flash'] = [
       'condition' => $condition,
       'message' => $message,
