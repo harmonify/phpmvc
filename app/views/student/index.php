@@ -1,13 +1,20 @@
 <div class="container mt-4 text-center">
+  <!-- Flasher -->
+  <div class="row">
+    <div class="col-md-8">
+      <?php Flasher::flash() ?>
+    </div>
+  </div>
+  <!-- Button to trigger modal -->
   <div class="row mb-3">
     <div class="col-2">
-      <!-- Button trigger modal -->
       <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#formModal">
         <i class="bi bi-plus mr-2"></i>
         <span>Add New Student</span>
       </button>
     </div>
   </div>
+  <!-- Table of Students -->
   <div class="row mb-3">
     <div class="col-8">
       <table class="table table-striped caption-top">
