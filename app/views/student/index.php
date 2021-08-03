@@ -20,7 +20,7 @@
     <div class="col-md-8">
       <form action="<?= BASEURL ?>/student/search" method="POST">
         <div class="input-group mb-3">
-          <input type="search" class="form-control" name="keyword" id="keyword" placeholder="Search student by name..." autocomplete="off">
+          <input type="search" class="form-control" name="keyword" id="keyword" placeholder="Search by keyword..." autocomplete="off">
           <button class="btn btn-primary text-white">
             <i class="bi bi-search"></i>
           </button>
