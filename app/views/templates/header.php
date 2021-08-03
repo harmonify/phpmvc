@@ -9,10 +9,12 @@
   <title><?= $data ?></title>
   <!-- Local Bootstrap CSS -->
   <link rel="stylesheet" href="<?= BASEURL ?>/css/bootstrap.min.css">
-  <!-- Local Bootstrap Bundle JS -->
-  <script defer src="<?= BASEURL ?>/js/bootstrap.bundle.min.js"></script>
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <!-- Local Bootstrap Bundle JS -->
+  <script defer src="<?= BASEURL ?>/js/bootstrap.bundle.min.js"></script>
+  <!-- Script -->
+  <script defer src="<?= BASEURL ?>/js/script.js"></script>
 </head>
 
 <body>
