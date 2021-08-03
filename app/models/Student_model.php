@@ -24,12 +24,23 @@ class Student_model {
 
   public function addNewStudent($data)
   {
-    $query = "INSERT INTO student VALUES (NULL, :name, :age, :sid)";
+    $query = "INSERT INTO {$this->table} VALUES (NULL, :name, :age, :sid)";
     $this->db->query($query);
 
     $this->db->bind('name', $data['name']);
     $this->db->bind('age', $data['age']);
     $this->db->bind('sid', $data['sid']);
+
+    $this->db->execute();
+
+    return $this->db->newRowCount();
+  }
+
+  public function deleteStudentById($id)
+  {
+    $query = "DELETE FROM {$this->table} WHERE id = :id";
+    $this->db->query($query);
+    $this->db->bind('id', $id);
 
     $this->db->execute();
 
