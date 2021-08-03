@@ -9,13 +9,6 @@
     document.querySelector('#sid').value = "";
   })
 
-  document.querySelectorAll('.show-modal-delete').forEach(el => {
-    let studentName = el.getAttribute('data-student-name');
-    el.addEventListener('click', () => {
-      document.querySelector('#student-name').innerText = studentName;
-    });
-  })
-
   document.querySelectorAll('.show-modal-edit').forEach(el => {
     el.addEventListener('click', async () => {
       try {
