@@ -37,9 +37,8 @@
                 class="badge bg-dark text-reset text-decoration-none">Detail</a>
               <a href="<?= BASEURL ?>/student/edit/<?= $student["id"] ?>"
                 class="badge bg-success text-reset text-decoration-none show-modal-edit" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $student['id'] ?>">Edit</a>
-              <a href="<?= BASEURL ?>/student/delete/<?= $student["id"] ?>"
-                class="badge bg-danger text-reset text-decoration-none show-modal-delete" data-bs-toggle="modal"
-                data-bs-target="#deleteModal" data-student-name="<?= $student['name'] ?>">Delete</a>
+              <a href="<?= BASEURL ?>/student/delete/<?= $student["id"] ?>" class="badge bg-danger text-reset text-decoration-none show-modal-delete" data-bs-toggle="modal"
+                data-bs-target="#deleteModal" onclick="confirm('Are you sure to delete the student with the name <?= $student['name'] ?>?')">Delete</a>
             </td>
           </tr>
           <?php endforeach; ?>
@@ -84,25 +83,6 @@
           <button type="submit" class="btn btn-primary">Confirm</button>
         </div>
       </form>
-    </div>
-  </div>
-</div>
-
-<!-- Delete Modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="deleteModalLabel">Confirm Delete</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Are you sure to delete the student with the name <span id="student-name"></span> ?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Confirm</button>
-      </div>
     </div>
   </div>
 </div>
