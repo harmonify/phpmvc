@@ -36,7 +36,7 @@
               <a href="<?= BASEURL ?>/student/detail/<?= $student["id"] ?>"
                 class="badge bg-dark text-reset text-decoration-none">Detail</a>
               <a href="<?= BASEURL ?>/student/edit/<?= $student["id"] ?>"
-                class="badge bg-success text-reset text-decoration-none show-modal-edit" data-bs-toggle="modal" data-bs-target="#formModal">Edit</a>
+                class="badge bg-success text-reset text-decoration-none show-modal-edit" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $student['id'] ?>">Edit</a>
               <a href="<?= BASEURL ?>/student/delete/<?= $student["id"] ?>"
                 class="badge bg-danger text-reset text-decoration-none show-modal-delete" data-bs-toggle="modal"
                 data-bs-target="#deleteModal" data-student-name="<?= $student['name'] ?>">Delete</a>
@@ -49,7 +49,7 @@
   </div>
 </div>
 
-<!-- Add Form Modal -->
+<!-- Add/Edit Modal -->
 <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -59,6 +59,7 @@
       </div>
       <form action="<?= BASEURL ?>/student/add" method="POST">
         <div class="modal-body">
+          <input type="hidden" name="id" id="id">
           <div class="row mb-3">
             <label for="name" class="col-3 col-form-label">Name</label>
             <div class="col-9">
