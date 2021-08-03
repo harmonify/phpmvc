@@ -35,6 +35,8 @@
             <td class="text-white">
               <a href="<?= BASEURL ?>/student/detail/<?= $student["id"] ?>"
                 class="badge bg-dark text-reset text-decoration-none">Detail</a>
+              <a href="<?= BASEURL ?>/student/edit/<?= $student["id"] ?>"
+                class="badge bg-success text-reset text-decoration-none" data-bs-toggle="modal" data-bs-target="#formModal">Edit</a>
               <a href="<?= BASEURL ?>/student/delete/<?= $student["id"] ?>"
                 class="badge bg-danger text-reset text-decoration-none" data-bs-toggle="modal"
                 data-bs-target="#deleteModal" onclick="passData('<?= $student['name'] ?>')">Delete</a>
@@ -47,7 +49,7 @@
   </div>
 </div>
 
-<!-- Form Modal -->
+<!-- Add Form Modal -->
 <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
