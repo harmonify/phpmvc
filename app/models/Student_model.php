@@ -46,4 +46,23 @@ class Student_model {
 
     return $this->db->newRowCount();
   }
+
+  public function editStudent($data)
+  {
+    $query = "UPDATE {$this->table} SET
+                name = :name,
+                age = :age,
+                sid = :sid
+              WHERE id = :id";
+    $this->db->query($query);
+
+    $this->db->bind('name', $data['name']);
+    $this->db->bind('age', $data['age']);
+    $this->db->bind('sid', $data['sid']);
+    $this->db->bind('id', $data['id']);
+
+    $this->db->execute();
+
+    return $this->db->newRowCount();
+  }
 }
