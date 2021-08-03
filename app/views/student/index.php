@@ -8,10 +8,24 @@
   <!-- Button to trigger modal -->
   <div class="row mb-3">
     <div class="col-3">
-      <button type="button" class="btn btn-primary w-100" id="show-modal-add" data-bs-toggle="modal" data-bs-target="#formModal">
+      <button type="button" class="btn btn-primary w-100" id="show-modal-add" data-bs-toggle="modal"
+        data-bs-target="#formModal">
         <i class="bi bi-plus mr-2"></i>
         <span>Add New Student</span>
       </button>
+    </div>
+  </div>
+  <!-- Search form -->
+  <div class="row mb-3">
+    <div class="col-md-8">
+      <form action="<?= BASEURL ?>/student/search" method="POST">
+        <div class="input-group mb-3">
+          <input type="search" class="form-control" name="keyword" id="keyword" placeholder="Search student by name..." autocomplete="off">
+          <button class="btn btn-primary text-white">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+      </form>
     </div>
   </div>
   <!-- Table of Students -->
@@ -36,8 +50,11 @@
               <a href="<?= BASEURL ?>/student/detail/<?= $student["id"] ?>"
                 class="badge bg-dark text-reset text-decoration-none">Detail</a>
               <a href="<?= BASEURL ?>/student/edit/<?= $student["id"] ?>"
-                class="badge bg-success text-reset text-decoration-none show-modal-edit" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $student['id'] ?>">Edit</a>
-              <a href="<?= BASEURL ?>/student/delete/<?= $student["id"] ?>" class="badge bg-danger text-reset text-decoration-none" onclick="confirm('Are you sure to delete the student with the name <?= $student['name'] ?>?')">Delete</a>
+                class="badge bg-success text-reset text-decoration-none show-modal-edit" data-bs-toggle="modal"
+                data-bs-target="#formModal" data-id="<?= $student['id'] ?>">Edit</a>
+              <a href="<?= BASEURL ?>/student/delete/<?= $student["id"] ?>"
+                class="badge bg-danger text-reset text-decoration-none"
+                onclick="confirm('Are you sure to delete the student with the name <?= $student['name'] ?>?')">Delete</a>
             </td>
           </tr>
           <?php endforeach; ?>
