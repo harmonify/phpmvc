@@ -33,4 +33,17 @@ class Student extends Controller {
       exit;
     }
   }
+
+  public function delete($id)
+  {
+    if ($this->model('Student_model')->deleteStudentById($id) > 0) {
+      Flasher::setFlash(true, 'deleted a student', 'warning');
+      header('Location: '.BASEURL.'/student');
+      exit;
+    } else {
+      Flasher::setFlash(false, 'delete a student', 'danger');
+      header('Location: '.BASEURL.'/student');
+      exit;
+    }
+  }
 }
