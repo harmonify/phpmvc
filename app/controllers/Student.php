@@ -64,4 +64,14 @@ class Student extends Controller {
       exit;
     }
   }
+
+  public function search()
+  {
+    $data['title'] = "Table of Students";
+    $data['students'] = $this->model('Student_model')->searchStudentsByKeyword();
+
+    $this->view('templates/header', $data['title']);
+    $this->view('student/index', $data);
+    $this->view('templates/footer');
+  }
 }
