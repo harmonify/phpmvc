@@ -37,8 +37,7 @@
                 class="badge bg-dark text-reset text-decoration-none">Detail</a>
               <a href="<?= BASEURL ?>/student/edit/<?= $student["id"] ?>"
                 class="badge bg-success text-reset text-decoration-none show-modal-edit" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $student['id'] ?>">Edit</a>
-              <a href="<?= BASEURL ?>/student/delete/<?= $student["id"] ?>" class="badge bg-danger text-reset text-decoration-none show-modal-delete" data-bs-toggle="modal"
-                data-bs-target="#deleteModal" onclick="confirm('Are you sure to delete the student with the name <?= $student['name'] ?>?')">Delete</a>
+              <a href="<?= BASEURL ?>/student/delete/<?= $student["id"] ?>" class="badge bg-danger text-reset text-decoration-none" onclick="confirm('Are you sure to delete the student with the name <?= $student['name'] ?>?')">Delete</a>
             </td>
           </tr>
           <?php endforeach; ?>
